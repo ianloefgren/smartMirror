@@ -6,6 +6,7 @@ import threading
 import time
 
 from clock import Clock
+from weather import Weather
 
 class FullscreenWindow:
 	def __init__(self):
@@ -23,6 +24,9 @@ class FullscreenWindow:
 		self.clock = Clock(self.topFrame)
 		self.clock.pack(side=RIGHT,anchor=N,padx=100,pady=60)		
 
+		# weather
+		self.weather = Weather(self.topFrame)
+		self.weather.pack(side=LEFT,anchor=N,padx=100,pady=60)
 
 	def toggle_fullscreen(self, event=None):
 		self.state = not self.state #toggle boolean
